@@ -6,3 +6,4 @@ cookiecutter
 pytest-cookies
 watchdog
 alabaster
+pyupio
