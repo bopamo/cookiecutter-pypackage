@@ -2,7 +2,7 @@ PyYAML==5.1.2
 pytest==5.1.2
 tox==3.14.0
 cryptography==2.7
-cookiecutter
+cookiecutter==1.6.0
 pytest-cookies
 watchdog
 alabaster
