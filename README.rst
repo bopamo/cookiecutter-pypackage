@@ -2,12 +2,12 @@
 Cookiecutter PyPackage
 ======================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
+.. image:: https://pyup.io/repos/github/bopamo/cookiecutter-pypackage/shield.svg
+     :target: https://pyup.io/repos/github/bopamo/cookiecutter-pypackage/
      :alt: Updates
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage     
+.. image:: https://travis-ci.org/bopamo/cookiecutter-pypackage.svg?branch=develop
+    :target: https://travis-ci.org/bopamo/cookiecutter-pypackage
 
 Cookiecutter_ template for a Python package.
 
@@ -98,7 +98,7 @@ Similar Cookiecutter Templates
 
 * Also see the `network`_ and `family tree`_ for this repo. (If you find
   anything that should be listed here, please add it and send a pull request!)
-  
+
 Support this Project
 ~~~~~~~~~~~~~~~~~~~~~
 
