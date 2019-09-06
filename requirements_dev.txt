@@ -1,7 +1,7 @@
 PyYAML==5.1.2
 pytest==5.1.2
 tox==3.14.0
-cryptography
+cryptography==2.7
 cookiecutter
 pytest-cookies
 watchdog
