@@ -54,7 +54,7 @@ def run_inside_dir(command, dirpath):
 
 
 def check_output_inside_dir(command, dirpath):
-    "Run a command from inside a given directory, returning the command output"
+    """Run a command from inside a given directory, returning the command output"""
     with inside_dir(dirpath):
         return subprocess.check_output(shlex.split(command))
 
@@ -170,7 +170,7 @@ def test_bake_selecting_license(cookies):
 
 
 def test_bake_not_open_source(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'open_source_license': 'Not open source'}) as result:
+    with bake_in_temp_dir(cookies, extra_context={"open_source_license": "Not open source"}) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'setup.py' in found_toplevel_files
         assert 'LICENSE' not in found_toplevel_files
@@ -178,7 +178,7 @@ def test_bake_not_open_source(cookies):
 
 
 def test_using_pytest(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'y'}) as result:
+    with bake_in_temp_dir(cookies, extra_context={"use_pytest": "y"}) as result:
         assert result.project.isdir()
         test_file_path = result.project.join('tests/test_python_boilerplate.py')
         lines = test_file_path.readlines()
@@ -190,9 +190,9 @@ def test_using_pytest(cookies):
 
 
 def test_not_using_pytest(cookies):
-    with bake_in_temp_dir(cookies) as result:
+    with bake_in_temp_dir(cookies, extra_context={"use_pytest": "n"}) as result:
         assert result.project.isdir()
-        test_file_path = result.project.join('tests/test_python_boilerplate.py')
+        test_file_path = result.project.join("tests/test_python_boilerplate.py")
         lines = test_file_path.readlines()
         assert "import unittest" in ''.join(lines)
         assert "import pytest" not in ''.join(lines)
@@ -215,19 +215,19 @@ def test_not_using_pytest(cookies):
 
 
 def test_bake_with_no_console_script(cookies):
-    context = {'command_line_interface': "No command-line interface"}
+    context = {"command_line_interface": "No command-line interface"}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, project_dir = project_info(result)
     found_project_files = os.listdir(project_dir)
     assert "cli.py" not in found_project_files
 
-    setup_path = os.path.join(project_path, 'setup.py')
-    with open(setup_path, 'r') as setup_file:
-        assert 'entry_points' not in setup_file.read()
+    setup_path = os.path.join(project_path, "setup.py")
+    with open(setup_path, "r") as setup_file:
+        assert "entry_points" not in setup_file.read()
 
 
 def test_bake_with_console_script_files(cookies):
-    context = {'command_line_interface': 'click'}
+    context = {"command_line_interface": "Click"}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, project_dir = project_info(result)
     found_project_files = os.listdir(project_dir)
@@ -239,11 +239,11 @@ def test_bake_with_console_script_files(cookies):
 
 
 def test_bake_with_console_script_cli(cookies):
-    context = {'command_line_interface': 'click'}
+    context = {"command_line_interface": "Click"}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, project_dir = project_info(result)
-    module_path = os.path.join(project_dir, 'cli.py')
-    module_name = '.'.join([project_slug, 'cli'])
+    module_path = os.path.join(project_dir, "cli.py")
+    module_name = '.'.join([project_slug, "cli"])
     if sys.version_info >= (3, 5):
         spec = importlib.util.spec_from_file_location(module_name, module_path)
         cli = importlib.util.module_from_spec(spec)
