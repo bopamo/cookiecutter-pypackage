@@ -33,14 +33,14 @@ Build Status
 
 Linux:
 
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+.. image:: https://img.shields.io/travis/bopamo/cookiecutter-pypackage.svg
+    :target: https://travis-ci.org/bopamo/cookiecutter-pypackage
     :alt: Linux build status on Travis CI
 
 Windows:
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
+.. image:: https://ci.appveyor.com/api/projects/status/github/bopamo/cookiecutter-pypackage?branch=master&svg=true
+    :target: https://ci.appveyor.com/project/bopamo/cookiecutter-pypackage/branch/master
     :alt: Windows build status on Appveyor
 
 Quickstart
