@@ -7,3 +7,4 @@ pytest-cookies
 watchdog
 alabaster
 pyupio
+xdoctest

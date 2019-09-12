@@ -21,7 +21,7 @@ def test_module_name():
 def test_village_name():
     village_name = "{{ cookiecutter.village_name}}"
 
-    assert village_name == "Koluama 3"
+    assert village_name == "Koluama 2"
 
 
 def run_pre_gen_project_hooks():
